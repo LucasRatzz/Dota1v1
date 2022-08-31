@@ -3,9 +3,29 @@ const app = express()
 app.use(express.json());
 const port = 3000
 const {createHero} = require('./createHero')
+var fs = require('fs')
+const redis = require('redis')
+const client = redis.createClient({
+    socket: {
+        host: process.env.REDIS || 'localhost',
+        port: 6379
+    }
+})
+client.on('error', err => {
+    console.log('Error ' + err);
+})
 
 const ogre = createHero("ogre", 1, { str: 23, agi: 15, int: 15 }, 200, 75, 40, 5, 1.7)
-const mars = createHero("mars", 1, { str: 23, agi: 20, int: 21 }, 200, 75, 34, -1, 1,7)
+//const mars = createHero("mars", 1, { str: 23, agi: 20, int: 21 }, 200, 75, 34, -1, 1,7)
+
+const marsText = fs.readFileSync('heroes/mars.json','utf8') // texto do objeto
+const mars = JSON.parse(marsText) // objeto
+client.connect().then(function () {
+    client.set("mars", marsText, (err , reply) => {
+        if (err) throw err
+        console.log(reply)
+    })
+})
 
 const heroes = [ogre,mars]
 

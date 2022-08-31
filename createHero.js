@@ -1,10 +1,12 @@
 const hpPerStr = 20
 const manaPerInt = 12
+var fs = require('fs');
+
 // const armorPerAgi = 1/6
 // const attackSpeedPerAgi = 1
 
 const isPositiveNumber = (number) =>
-    !isNaN(number) && number > 0
+!isNaN(number) && number > 0
 
 const isAttributeValid = (attribute) =>
     isPositiveNumber(attribute.str) &&
@@ -55,13 +57,18 @@ const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage,
             return ((100 + this.agi) * 0.01) / this.baseAttackTime
         }
     }
+    const a = JSON.stringify(newHero)
+    fs.writeFile('heroes/'+newHero.name+".json", a, function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
     return newHero
 }
 
-const ogre = createHero("ogre", 1, { str: 23, agi: 12, int: 15 }, 200, 75, 40, 28, 1.7)
-console.log(ogre)
-console.log(ogre.reduceDamageByArmor())
-console.log(ogre.attackPerSecond())
+//const ogre = createHero("ogre", 1, { str: 23, agi: 12, int: 15 }, 200, 75, 40, 28, 1.7)
+// console.log(ogre)
+// console.log(ogre.reduceDamageByArmor())
+// console.log(ogre.attackPerSecond())
 
 
 module.exports.createHero = createHero
