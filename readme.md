@@ -1,5 +1,7 @@
 # Dota 2 challenge 1v1
 
+- Para começar o processo do servidor iniciar `npm run start`
+
 - Adicionar armadura
   - Novo param na criação
     - Pode ser negativo
