@@ -6,8 +6,8 @@ app.use(cors())
 const port = 3000
 const { createHero } = require('./createHero')
 
-const ogre = createHero("ogre", 1, { str: 23, agi: 15, int: 15 }, 200, 75, 40, 5, 1.7)
-const mars = createHero("mars", 1, { str: 23, agi: 20, int: 21 }, 200, 75, 34, -1, 1, 7)
+const ogre = createHero("Ogre Magi", 1, { str: 23, agi: 15, int: 15 }, 200, 75, 40, 5, 1.7)
+const mars = createHero("Mars", 1, { str: 23, agi: 20, int: 21 }, 200, 75, 34, -1, 1, 7)
 
 const heroes = [ogre, mars]
 
