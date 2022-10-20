@@ -1,3 +1,15 @@
+const axios = require('axios')
+// result.data.['1'].stat.attackRate = 1.4
+
+
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJodHRwczovL3N0ZWFtY29tbXVuaXR5LmNvbS9vcGVuaWQvaWQvNzY1NjExOTc5OTk0MzY0MjciLCJ1bmlxdWVfbmFtZSI6InZpb2xlbnRLZW4iLCJTdWJqZWN0IjoiNGFmNzM3MGYtYzdhOC00NmVlLTgzYzUtMDQ1MTUxMzRkODg1IiwiU3RlYW1JZCI6IjM5MTcwNjk5IiwibmJmIjoxNjY2MjMxODUyLCJleHAiOjE2OTc3Njc4NTIsImlhdCI6MTY2NjIzMTg1MiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3RyYXR6LmNvbSJ9.kZRv_HgpXkksN1dFJ8Feyq1fTYlvOuKvJkhd9ytptwg"
+    axios.get('https://api.stratz.com/api/v1/Hero', {headers: {Authorization:token}}).then((result) => {
+        for (let hero in result.data) {
+            
+        }
+        console.log(result.status, result.data['1'].stat)
+})
+
 const hpPerStr = 20
 const manaPerInt = 12
 // const armorPerAgi = 1/6
