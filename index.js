@@ -4,12 +4,17 @@ const app = express()
 app.use(express.json());
 app.use(cors())
 const port = 3000
-const { createHero } = require('./createHero')
+const { createHero, getAllHeroes } = require('./createHero')
 
-const ogre = createHero("Ogre Magi", 1, { str: 23, agi: 15, int: 15 }, 200, 75, 40, 5, 1.7)
-const mars = createHero("Mars", 1, { str: 23, agi: 20, int: 21 }, 200, 75, 34, -1, 1, 7)
+// const ogre = createHero("Ogre Magi", 1, { str: 23, agi: 15, int: 15 }, 200, 75, 40, 5, 1.7)
+// const mars = createHero("Mars", 1, { str: 23, agi: 20, int: 21 }, 200, 75, 34, -1, 1, 7)
 
-const heroes = [ogre, mars]
+let heroes = []
+const fillInHeroes = async () => {
+    const moreHeroes = await getAllHeroes()
+    heroes = moreHeroes
+}
+fillInHeroes()
 
 app.get('/heroes', (req, res) => {
     try {
