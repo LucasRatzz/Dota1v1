@@ -8,6 +8,7 @@ const getAllHeroes = async () => {
         for (let heroID in response.data) {
             const hero = response.data[heroID]
             const name = hero.displayName
+            const attribute = hero.stat.primaryAttribute
             const baseHitpoints = hero.stat.hpBarOffset <= 0 ? 1 : hero.stat.hpBarOffset
             const baseMana = 100 // TODO: Tornar isso dinâmico
             const baseArmor = hero.stat.startingArmor 
@@ -18,7 +19,7 @@ const getAllHeroes = async () => {
                 int: hero.stat.intelligenceBase,
                 agi: hero.stat.agilityBase,
             }
-            const createdHero = createHero(name, 1, attributes, baseHitpoints, baseMana,baseAttackAverage ,baseArmor,attackRate)
+            const createdHero = createHero(name, 1, attributes, baseHitpoints, baseMana,baseAttackAverage ,baseArmor,attackRate, attribute)
             allHeroes.push(createdHero)
         }
         return allHeroes
@@ -41,7 +42,7 @@ const isAttributeValid = (attribute) =>
 //     return 1-((0.06 * armor) / (1 + (0.06 * Math.abs(armor))))
 // }
 
-const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage, baseArmor, baseAttackTime) => {
+const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage, baseArmor, baseAttackTime, mainAttribute) => {
 
     if (!name) throw new Error("Invalid Name!")
     if (!isPositiveNumber(level) || level > 30)
@@ -71,6 +72,7 @@ const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage,
         damage: baseDamage,
         baseArmor,
         baseAttackTime,
+        mainAttribute,
         armor: function () {
             return this.baseArmor + (this.agi * (1 / 5.9999999999999))
         },
