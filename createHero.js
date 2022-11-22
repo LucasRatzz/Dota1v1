@@ -1,28 +1,72 @@
 const axios = require('axios')
+const fs = require('fs')
 // result.data.['1'].stat.attackRate = 1.4
+
+const getHeroImages = async () => {
+    const allHeroesImages = []
+    const fileContent = await fs.promises.readFile("heroesImages.json",{encoding: "utf8"})
+    let heroes = JSON.parse(fileContent)
+    // const allHeroesImages = heroes.map((hero) => {
+    //     return {
+    //         id: hero.id,
+    //         imgLink: hero.image,
+    //         attributeImg: hero.attribute_img
+    //     }
+    // })
+    // [1,2,3].map(number => {
+    //     return number * 2
+    // })
+    // // [2, 4, 6]
+
+    // [1,2,3].map(number => {
+    //     return 'a'
+    // })
+    // ['a', 'a', 'a']
+
+    for (let heroImg of heroes) {
+        const hero = {
+            id: heroImg.id,
+            imgLink: heroImg.image,
+            attributeImg: heroImg.attribute_img
+        }
+        allHeroesImages.push(hero)
+    }
+   return allHeroesImages
+}
 
 const getAllHeroes = async () => {
     const allHeroes = []
-    const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJodHRwczovL3N0ZWFtY29tbXVuaXR5LmNvbS9vcGVuaWQvaWQvNzY1NjExOTc5OTk0MzY0MjciLCJ1bmlxdWVfbmFtZSI6InZpb2xlbnRLZW4iLCJTdWJqZWN0IjoiNGFmNzM3MGYtYzdhOC00NmVlLTgzYzUtMDQ1MTUxMzRkODg1IiwiU3RlYW1JZCI6IjM5MTcwNjk5IiwibmJmIjoxNjY2MjMxODUyLCJleHAiOjE2OTc3Njc4NTIsImlhdCI6MTY2NjIzMTg1MiwiaXNzIjoiaHR0cHM6Ly9hcGkuc3RyYXR6LmNvbSJ9.kZRv_HgpXkksN1dFJ8Feyq1fTYlvOuKvJkhd9ytptwg"
-        const response = await axios.get('https://api.stratz.com/api/v1/Hero', {headers: {Authorization:token}})
-        for (let heroID in response.data) {
-            const hero = response.data[heroID]
-            const name = hero.displayName
-            const attribute = hero.stat.primaryAttribute
-            const baseHitpoints = hero.stat.hpBarOffset <= 0 ? 1 : hero.stat.hpBarOffset
-            const baseMana = 100 // TODO: Tornar isso dinâmico
-            const baseArmor = hero.stat.startingArmor 
-            const attackRate = hero.stat.attackRate
-            const baseAttackAverage = (hero.stat.startingDamageMin + hero.stat.startingDamageMax) / 2 
-            const attributes = {
-                str: hero.stat.strengthBase,
-                int: hero.stat.intelligenceBase,
-                agi: hero.stat.agilityBase,
-            }
-            const createdHero = createHero(name, 1, attributes, baseHitpoints, baseMana,baseAttackAverage ,baseArmor,attackRate, attribute)
-            allHeroes.push(createdHero)
+    const token = process.env.APIHERODATA
+    const response = await axios.get('https://api.stratz.com/api/v1/Hero', {headers: {Authorization:token}})
+    const allHeroesImg = await getHeroImages()
+    // response1 = await response
+    // response2 = await allHeroesImg
+    for (let heroID in response.data) {
+        const hero = response.data[heroID]
+        const name = hero.displayName
+        const attribute = hero.stat.primaryAttribute
+        const baseHitpoints = hero.stat.hpBarOffset <= 0 ? 1 : hero.stat.hpBarOffset
+        const baseMana = 100 // TODO: Tornar isso dinâmico
+        const baseArmor = hero.stat.startingArmor 
+        const attackRate = hero.stat.attackRate
+        const baseAttackAverage = (hero.stat.startingDamageMin + hero.stat.startingDamageMax) / 2 
+        const attributes = {
+            str: hero.stat.strengthBase,
+            int: hero.stat.intelligenceBase,
+            agi: hero.stat.agilityBase,
         }
-        return allHeroes
+        let img = allHeroesImg.find(element => {
+            if (element.id == heroID) {
+                return true
+            }
+        })
+        // iterariam allHeroesImg
+        // encontraria o heroi atual, recuperar a imagem e atributo
+        // repassar para createHero
+        const createdHero = createHero(name, 1, attributes, baseHitpoints, baseMana,baseAttackAverage ,baseArmor,attackRate, attribute, img.attributeImg, img.imgLink)
+        allHeroes.push(createdHero)
+    }
+    return allHeroes
 }
 
 const hpPerStr = 20
@@ -42,7 +86,7 @@ const isAttributeValid = (attribute) =>
 //     return 1-((0.06 * armor) / (1 + (0.06 * Math.abs(armor))))
 // }
 
-const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage, baseArmor, baseAttackTime, mainAttribute) => {
+const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage, baseArmor, baseAttackTime, mainAttribute, attributeImg, urlImg) => {
 
     if (!name) throw new Error("Invalid Name!")
     if (!isPositiveNumber(level) || level > 30)
@@ -81,7 +125,9 @@ const createHero = (name, level, attribute, baseHitpoints, baseMana, baseDamage,
         },
         attackPerSecond: function(){
             return ((100 + this.agi) * 0.01) / this.baseAttackTime
-        }
+        },
+        attributeImg,
+        urlImg,
     }
     return newHero
 }
