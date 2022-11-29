@@ -96,7 +96,7 @@
         "name_english_loc": "Shadow Fiend",
         "primary_attr": 1,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shadow_fiend.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nevermore.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_agility.png"
     },
     {
@@ -196,7 +196,7 @@
         "name_english_loc": "Vengeful Spirit",
         "primary_attr": 1,
         "complexity": 1,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengeful_spirit.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_agility.png"
     },
     {
@@ -206,7 +206,7 @@
         "name_english_loc": "Windranger",
         "primary_attr": 2,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windranger.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -216,7 +216,7 @@
         "name_english_loc": "Zeus",
         "primary_attr": 2,
         "complexity": 1,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zeus.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -346,7 +346,7 @@
         "name_english_loc": "Necrophos",
         "primary_attr": 2,
         "complexity": 1,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrophos.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -376,7 +376,7 @@
         "name_english_loc": "Queen of Pain",
         "primary_attr": 2,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queen_of pain.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -406,7 +406,7 @@
         "name_english_loc": "Wraith King",
         "primary_attr": 0,
         "complexity": 1,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wraith_king.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skeleton_king.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -496,7 +496,7 @@
         "name_english_loc": "Clockwerk",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/clockwerk.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -516,7 +516,7 @@
         "name_english_loc": "Nature's Prophet",
         "primary_attr": 2,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nature's_prophet.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -526,7 +526,7 @@
         "name_english_loc": "Lifestealer",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lifestealer.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/life_stealer.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -666,7 +666,7 @@
         "name_english_loc": "Doom",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/doom.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/doom_bringer.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -746,7 +746,7 @@
         "name_english_loc": "Outworld Destroyer",
         "primary_attr": 2,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/outworld_destroyer.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/obsidian_destroyer.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -816,7 +816,7 @@
         "name_english_loc": "Treant Protector",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant_protector.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -886,7 +886,7 @@
         "name_english_loc": "Keeper of the Light",
         "primary_attr": 2,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of the light.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
     },
     {
@@ -896,7 +896,7 @@
         "name_english_loc": "Io",
         "primary_attr": 0,
         "complexity": 3,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/io.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -946,7 +946,7 @@
         "name_english_loc": "Centaur Warrunner",
         "primary_attr": 0,
         "complexity": 1,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur_warrunner.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -956,7 +956,7 @@
         "name_english_loc": "Magnus",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnus.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnataur.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -966,7 +966,7 @@
         "name_english_loc": "Timbersaw",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/timbersaw.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
@@ -1116,7 +1116,7 @@
         "name_english_loc": "Underlord",
         "primary_attr": 0,
         "complexity": 2,
-        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/underlord.png",
+        "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abyssal_underlord.png",
         "attribute_img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
     },
     {
